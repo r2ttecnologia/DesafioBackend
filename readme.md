@@ -5,7 +5,7 @@
 ## Descrição
 
 O desafio proposto consiste no desenvolvimento de uma API em Node.js que deverá receber uma imagem no corpo, processá-la e gerar imagens comprimidas para exibição e carregamento rápido em dispositivos móveis e websites, mantendo a original também. 
-As imagens geradas pela API devem ser enviadas para o serviço de armazenamento S3. Para isto o candidato deverá criar uma conta no provedor AWS e disponibilizar acesso à equipe da R2T.
+As imagens geradas pela API devem ser enviadas para o serviço de armazenamento S3 e seus caminhos (keys) devem ser armazenados em uma instância de banco de dados Mongo. Para isto o candidato deverá criar uma conta no provedor AWS e disponibilizar acesso à equipe da R2T.
 
 ## Entrega
 
