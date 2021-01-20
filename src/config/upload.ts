@@ -5,7 +5,6 @@ interface IUploadConfig {
   driver: 's3' | 'disk';
 
   tmpFolder: string;
-  uploadsFolder: string;
 
   multer: {
     storage: StorageEngine;
@@ -19,13 +18,11 @@ interface IUploadConfig {
 }
 
 const tmpFolder = path.resolve(__dirname, '..', '..', 'tmp');
-const uploadsFolder = path.resolve(tmpFolder, 'uploads');
 
 export default {
   driver: process.env.STORAGE_DRIVER,
 
   tmpFolder,
-  uploadsFolder,
 
   multer: {
     storage: multer.diskStorage({
