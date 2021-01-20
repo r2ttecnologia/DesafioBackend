@@ -1,8 +1,9 @@
 import path from 'path';
 import crypto from 'crypto';
 import multer, { StorageEngine } from 'multer';
-
 interface IUploadConfig {
+  driver: 's3' | 'disk';
+
   tmpFolder: string;
   uploadsFolder: string;
 
@@ -21,6 +22,8 @@ const tmpFolder = path.resolve(__dirname, '..', '..', 'tmp');
 const uploadsFolder = path.resolve(tmpFolder, 'uploads');
 
 export default {
+  driver: process.env.STORAGE_DRIVER,
+
   tmpFolder,
   uploadsFolder,
 
@@ -38,7 +41,7 @@ export default {
 
   config: {
     aws: {
-      bucket: 'fsfsfs',
+      bucket: 'app-ticket',
     }
   }
 } as IUploadConfig;
