@@ -40,8 +40,6 @@ class S3StorageProvider implements IStorageProvider {
 
     return file;
   }
-
-  public async deleteFile(file: string): Promise<void> {}
 }
 
 export default S3StorageProvider;
