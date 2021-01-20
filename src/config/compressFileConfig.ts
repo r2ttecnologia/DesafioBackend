@@ -18,13 +18,10 @@ export const fileSize = async (file: Express.Multer.File) => {
 
   const sizes = [128, 48, 32, 24, 16];
 
-  sizes.forEach(size => {
-    sharp(filePath)
+  sizes.forEach(async size => {
+    await sharp(filePath)
     .clone()
     .resize({ width: size })
     .toFile(`${destination}/${fileHashName}-${size}.${extension}`)
-    .then(info => {
-      console.log(info)
-    }).catch(err => console.log(err))
   })
 }
