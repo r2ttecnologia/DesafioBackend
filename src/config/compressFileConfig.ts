@@ -1,18 +1,11 @@
-import { Express } from 'express';
-import crypto from 'crypto';
 import path from 'path';
 import sharp from 'sharp';
 
-const sizes = [128, 48, 32, 24, 16];
-
-export const fileSize = async (file: Express.Multer.File) => {
+export const fileSize = async (fileName: string) => {
   const tempFolder = path.resolve(__dirname, '..', '..', 'tmp');
-  const filePath = path.resolve(__dirname, '..', '..', 'tmp', `${file.originalname}`);
+  const filePath = path.resolve(__dirname, '..', '..', 'tmp', `${fileName}`);
 
-  const [fileOriginalName, extension] = path.basename(filePath).split('.');
-  const fileHash = crypto.randomBytes(10).toString('hex');
-
-  const fileHashName = `${fileHash}-${fileOriginalName}`;
+  const [fileHashName, extension] = path.basename(filePath).split('.');
 
   const destination = `${tempFolder}/uploads`;
 
