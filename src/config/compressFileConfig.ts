@@ -20,13 +20,15 @@ export const fileSize = async (fileName: string) => {
   const sizes = [128, 48, 32, 24, 16];
 
   sizes.forEach(async size => {
+    const newFile = `${fileHashName}-${size}.${extension}`;
+
     await sharp(filePath)
       .clone()
       .resize({ width: size })
-      .toFile(`${tempFolder}/${fileHashName}-${size}.${extension}`)
+      .toFile(`${tempFolder}/${newFile}`)
     uploadConfig.driver === 's3' ?
-      await s3StorageProvider.saveFile(`${fileHashName}-${size}.${extension}`) :
-      await diskStorageProvider.saveFile(`${fileHashName}-${size}.${extension}`);
+      await s3StorageProvider.saveFile(`${newFile}`) :
+      await diskStorageProvider.saveFile(`${newFile}`);
   });
 
 }
