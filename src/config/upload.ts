@@ -38,7 +38,7 @@ export default {
 
   config: {
     aws: {
-      bucket: 'app-ticket',
+      bucket: 'desafior2t',
     }
   }
 } as IUploadConfig;
