@@ -16,7 +16,7 @@ questões de segurança;
 
 - Há dois tipos de drivers que podem ser utilizados nas variáveis
 ambiente: "s3" ou "disk". Ao selecionar disk os arquivos serão salvos no disco
-local. Ao selecionar s3, se as chaves de acesso estiverem configuradas corretamente
+local. Ao selecionar s3, se as chaves de acesso estiverem configuradas corretamente,
 os arquivos irão para o bucket "desafior2t".
 
 - Utilizando uma ferramenta cliente http, como o Insomnia, por exemplo, crie uma
@@ -40,10 +40,10 @@ instalada foi aws-sdk;
 - Para configurar o contentType dos arquivos e possibilitar abri-los através do
 link no s3, foi utilizada a lib mime;
 
-- A lib dot-env foi utilizada para que a aplicação não tivesse probleas para ler
+- A lib dot-env foi utilizada para que a aplicação não tivesse problemas para ler
 as variáveis ambiente no arquivo .env;
 
-- Esse utilizou como padrão para seu desenvolvimento o Typescript. As demais
+- Esse projeto utilizou como padrão para seu desenvolvimento o Typescript. As demais
 bibliotecas utilizadas no projeto foram basicamente para padronização do código.
 
 ## Desafios enfrentados nesse projeto
