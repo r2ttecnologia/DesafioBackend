@@ -20,6 +20,9 @@ class FileSize {
     const urlUploas =
       `https://${uploadConfig.config.aws.bucket}.s3.amazonaws.com/${fileName}`;
 
+    const [http, , url] = urlUploas.split('/');
+    const newPath = `${http}//${url}/`;
+
       this.storageProvider.saveFile(fileName)
       this.urlUploadsRepository.create(urlUploas)
 
@@ -34,7 +37,7 @@ class FileSize {
           .toFile(`${tempFolder}/${newFile}`)
 
       await this.urlUploadsRepository
-          .create(`https://${uploadConfig.config.aws.bucket}.s3.amazonaws.com/${newFile}`)
+          .create(`${newPath}${newFile}`)
 
       await this.storageProvider.saveFile(newFile)
     });
