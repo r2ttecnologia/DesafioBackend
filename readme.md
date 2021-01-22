@@ -26,6 +26,9 @@ rota do tipo POST para o endereço http://localhost:3333/files;
 
 - O nome do campo deve ser "file", conforme configuração utilizada no Multer;
 
+- Será necessário ter uma versão do Mongodb instalada na máquina que for rodar
+esse projeto. Nesse projeto foi utilizada uma imagem do Mongo rodando no Docker.
+
 ## Principais ferramentas utilizadas no projeto
 
 - Para configuração de todo o serviço http foi utilizado o framework Express;
@@ -45,6 +48,12 @@ as variáveis ambiente no arquivo .env;
 
 - Esse projeto utilizou como padrão para seu desenvolvimento o Typescript. As demais
 bibliotecas utilizadas no projeto foram basicamente para padronização do código.
+
+- Como banco de dados para o projeto, foi utilizado o Mongodb, banco não relacional.
+Para ter acesso à conexão com o banco foi instalado o plugin mongodb.
+
+- Para gerenciar a conexão com o banco de dados foi utilizado o ORM TypeORM. A lib
+instalado foi a typeorm.
 
 ## Desafios enfrentados nesse projeto
 
