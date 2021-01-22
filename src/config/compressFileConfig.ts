@@ -3,14 +3,14 @@ import sharp from 'sharp';
 import uploadConfig from './upload';
 import S3StorageProvider from '../providers/implementations/S3StorageProvider';
 import DiskStorageProvider from '../providers/implementations/DiskStorageProvider';
-import UrlUploadsRepository from '../database/mongodb/typeorm/repositories/UrlUploadsRepository';
+import IUrlUploadsRepository from '../database/repositories/IUrlUploadsRepository';
 
 const s3StorageProvider = new S3StorageProvider();
 const diskStorageProvider = new DiskStorageProvider();
 
 class FileSize {
   constructor(
-    private urlUploadsRepository: UrlUploadsRepository,
+    private urlUploadsRepository: IUrlUploadsRepository,
   ){}
 
   public async execute(fileName: string): Promise<string> {
